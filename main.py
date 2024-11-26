@@ -8,6 +8,10 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0 , 0)
 
+# Game Variables
+moveSpeed = 5
+
+
 GAME_ROOT_FOLDER = os.path.dirname(__file__)
 IMAGE_FOLDER = os.path.join(GAME_ROOT_FOLDER, "Images")
 
@@ -64,6 +68,7 @@ while True:
 
     #Place enemy on screen
     screen.blit(enemy.image, enemy.rect)
+    enemy.rect.move_ip(0, moveSpeed)
 
     # Check for events
     for event in pygame.event.get():
